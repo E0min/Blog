@@ -1,0 +1,112 @@
+// CSS 변수로 전환 (기본 모드: 라이트)
+:root[color-theme='light'] {
+    --background-color: #ffffff;
+    --text-color: rgb(30, 28, 28);
+}
+
+:root[color-theme='dark'] {
+    --background-color: rgb(30, 28, 28);
+    --text-color: #ffffff;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+    width: 90%;
+
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        height: 60px;
+
+        div {
+            margin-right: 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+
+            &:nth-child(1) {
+                font-weight: 1000;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5) {
+                color: var(--text-color);
+            }
+
+            &:hover {
+                color: #686a6b;
+                transform: scale(1.05);
+            }
+        }
+
+        .toggle-container {
+            margin-left: auto;
+        }
+    }
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+
+    // 체크박스 요소 스타일
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    // 슬라이더 (스위치의 시각적 요소)
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: 0.4s;
+        border-radius: 25px;
+
+
+        // 슬라이더 내부의 핸들 (토글하는 동그란 버튼)
+        &:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: var(--background-color);
+            transition: 0.4s;
+        }
+    }
+
+    // 체크박스가 선택되었을 때 슬라이더의 스타일 변경
+    input:checked + .slider {
+        background-color: var(--text-color);
+
+        // 핸들이 오른쪽으로 이동
+        &:before {
+            transform: translateX(24px);
+        }
+    }
+
+    // 슬라이더가 둥글게 처리되도록 보장하는 클래스
+    .round {
+        border-radius: 25px;
+        background-color: var(--text-color);
+    }
+}

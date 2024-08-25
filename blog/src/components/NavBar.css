@@ -1,0 +1,89 @@
+:root[color-theme=light] {
+  --background-color: #ffffff;
+  --text-color: rgb(30, 28, 28);
+}
+
+:root[color-theme=dark] {
+  --background-color: rgb(30, 28, 28);
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+  width: 90%;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  height: 60px;
+}
+nav ul div {
+  margin-right: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+nav ul div:nth-child(1) {
+  font-weight: 1000;
+}
+nav ul div:nth-child(2), nav ul div:nth-child(3), nav ul div:nth-child(4), nav ul div:nth-child(5) {
+  color: var(--text-color);
+}
+nav ul div:hover {
+  color: #686a6b;
+  transform: scale(1.05);
+}
+nav ul .toggle-container {
+  margin-left: auto;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--background-color);
+  transition: 0.4s;
+}
+.switch input:checked + .slider {
+  background-color: var(--text-color);
+}
+.switch input:checked + .slider:before {
+  transform: translateX(24px);
+}
+.switch .round {
+  border-radius: 25px;
+  background-color: var(--text-color);
+}/*# sourceMappingURL=NavBar.css.map */

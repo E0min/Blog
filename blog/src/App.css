@@ -1,0 +1,17 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* 박스들을 감싸는 컨테이너 */
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 150px); /* 2개의 열로 구성 */
+  grid-template-rows: repeat(2, 150px); /* 2개의 행으로 구성 */
+  gap: 20px; /* 박스 사이의 간격 */
+}
