@@ -13,9 +13,7 @@ const GuestLog= () => {
             <hr/>
             <div className="page-intro">
                 <h1>GuestLog</h1>
-                <h3>댓글창 구현</h3>
                 <Comment postId={"GuestLog"}/>
-
             </div>
             <hr/>
         </>

@@ -2,11 +2,14 @@
 :root[color-theme='light'] {
     --background-color: #ffffff;
     --text-color: rgb(30, 28, 28);
+    --text-box:aliceblue;
 }
 
 :root[color-theme='dark'] {
     --background-color: rgb(30, 28, 28);
     --text-color: #ffffff;
+    --text-box: #0F0700;
+
 }
 
 body {
@@ -46,6 +49,9 @@ nav {
             &:hover {
                 color: #686a6b;
                 transform: scale(1.05);
+            }
+            a{
+                text-decoration: none;
             }
         }
 

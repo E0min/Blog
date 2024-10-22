@@ -27,11 +27,11 @@ const NavBar = () => {
         <>
             <nav>
                 <ul>
-                    <div className="name">E0min</div>
-                    <div >About</div>
-                    <div onClick={goToBlog}>Blog</div>
-                    <div>Note</div>
-                    <div onClick={goToGuestLog}>GuestLog</div>
+                    <div role='button' className="name">E0min</div>
+                    <div role='button'> <a href=""></a> About</div>
+                    <div role='button' onClick={goToBlog}>Blog</div>
+                    <div role='button' > <a href="https://relieved-rutabaga-aa6.notion.site/Computer-07d20f5da92941ff953bea7f1b35911a?pvs=4">Note</a> </div>
+                    <div role='button'onClick={goToGuestLog}>GuestLog</div>
                     {/* 토글 버튼 */}
                     <div className="toggle-container">
                         <label className="switch">
