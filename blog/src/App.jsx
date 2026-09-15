@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Blog />} />
         <Route path="/GuestLog" element={<GuestLog />} />
-
+        
       </Routes>
     </Router>
   );

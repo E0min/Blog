@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root[color-theme=light] {
   --background-color: #ffffff;
   --text-color: rgb(30, 28, 28);
@@ -42,9 +43,6 @@ nav ul div:nth-child(2), nav ul div:nth-child(3), nav ul div:nth-child(4), nav u
 nav ul div:hover {
   color: #686a6b;
   transform: scale(1.05);
-}
-nav ul div a {
-  text-decoration: none;
 }
 nav ul .toggle-container {
   margin-left: auto;
@@ -91,4 +89,51 @@ nav ul .toggle-container {
 .switch .round {
   border-radius: 25px;
   background-color: var(--text-color);
-}/*# sourceMappingURL=NavBar.css.map */
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+.main-container .comments {
+  list-style: none;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+}
+.main-container .comments li {
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px 0px;
+  text-decoration: none;
+}
+.main-container .comments li p {
+  background-color: var(--text-box);
+  padding: 5px;
+  margin: 3px;
+  border-radius: 5px;
+}
+.main-container textarea {
+  width: 70%;
+  height: 4rem;
+  border: 1.5px solid var(--text-color);
+  border-radius: 10px;
+  margin-left: auto; /* 버튼을 오른쪽 끝으로 이동 */
+  resize: none; /* 크기 조절 비활성화 */
+}
+.main-container button {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  width: 10%;
+  padding: 10px;
+  margin: 10px;
+  margin-left: auto; /* 버튼을 오른쪽 끝으로 이동 */
+  background-color: var(--text-box);
+  border: none;
+  border-radius: 5px;
+}
+.main-container button:hover {
+  transform: scale(1.05);
+  transition: 0.6s;
+}/*# sourceMappingURL=Comment.css.map */

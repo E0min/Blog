@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { collection, addDoc, query, where, onSnapshot } from "firebase/firestore";
 import { db } from "../firebaseConfig"; // firebase 초기화한 파일
+import "./Comment.css"
 
 const Comment = ({ postId }) => {
   const [comments, setComments] = useState([]);
@@ -45,9 +46,8 @@ const Comment = ({ postId }) => {
   };
 
   return (
-    <div>
-      <h3>Comments</h3>
-      <ul>
+    <div className="main-container">
+      <ul className="comments">
         {comments.map((comment) => (
           <li key={comment.id}>
             <p>{comment.text}</p>
@@ -59,10 +59,10 @@ const Comment = ({ postId }) => {
       <textarea
         value={newComment}
         onChange={(e) => setNewComment(e.target.value)}
-        placeholder="Write a comment..."
+        placeholder="댓글 작성하기"
       />
       <button onClick={handleAddComment} disabled={!newComment.trim()}>
-        Add Comment
+        작성
       </button>
     </div>
   );
